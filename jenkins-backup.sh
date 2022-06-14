@@ -64,7 +64,7 @@ function main() {
 
   cp -R "${JENKINS_HOME}/"*.xml "${ARC_DIR}"
 
-  cp "${JENKINS_HOME}/plugins/"*.[hj]pi "${ARC_DIR}/plugins"
+  cp -R "${JENKINS_HOME}/plugins/"*.[hj]pi "${ARC_DIR}/plugins"
   hpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.hpi.pinned | wc -l)
   jpi_pinned_count=$(find ${JENKINS_HOME}/plugins/ -name *.jpi.pinned | wc -l)
   if [ ${hpi_pinned_count} -ne 0 -o ${jpi_pinned_count} -ne 0 ]; then
